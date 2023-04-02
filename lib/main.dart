@@ -25,7 +25,7 @@ class myhomepage extends StatelessWidget {
   final usernameController = TextEditingController();
   final passwordcontroller = TextEditingController();
 
-  //sign user
+  //sign user in method
   void signUserIn() {}
 
   @override
@@ -35,6 +35,7 @@ class myhomepage extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(height: 50),
               //logo
@@ -116,13 +117,41 @@ class myhomepage extends StatelessWidget {
                   ],
                 ),
               ),
+
+              const SizedBox(height: 50),
               Row(
-                children: [
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
                   //google
                   SquareTile(imagePath: 'lib/images/google.png'),
 
+                  SizedBox(width: 25),
+
                   //apple
                   SquareTile(imagePath: 'lib/images/apple.png'),
+                ],
+              ),
+
+              const SizedBox(height: 50),
+              // not a memeber Register
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Not A member?',
+                    style: TextStyle(
+                      color: Colors.grey[700],
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  const Text(
+                    'Register Now',
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               )
             ],
