@@ -1,4 +1,6 @@
+import 'package:all_together/components/my_button.dart';
 import 'package:all_together/components/my_textfield.dart';
+import 'package:all_together/components/square_tile.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,6 +24,9 @@ class myhomepage extends StatelessWidget {
   // Text edit controller
   final usernameController = TextEditingController();
   final passwordcontroller = TextEditingController();
+
+  //sign user
+  void signUserIn() {}
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +69,62 @@ class myhomepage extends StatelessWidget {
                 hintText: 'Possword',
                 obscureText: true,
               ),
+              //forgot Password
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      'Forgot Password?',
+                      style: TextStyle(color: Colors.grey[600]),
+                    ),
+                  ],
+                ),
+              ),
+              //signin button
+              const SizedBox(height: 25),
+              MyButton(onTap: signUserIn),
+
+              const SizedBox(height: 50),
+
+              // Continue with
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.grey[400],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Text(
+                        'Or Continue with',
+                        style: TextStyle(color: Colors.grey[700]),
+                      ),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        thickness: 0.5,
+                        color: Colors.grey[400],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  //google
+                  SquareTile(imagePath: 'lib/images/google.png'),
+
+                  //apple
+                  SquareTile(imagePath: 'lib/images/apple.png'),
+                ],
+              )
             ],
           ),
         ),
