@@ -5,25 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  runApp(LoginPage());
-}
-
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'flutterdemo',
-      home: myhomepage(),
-    );
-  }
-}
 
 class myhomepage extends StatelessWidget {
   myhomepage({super.key});
@@ -32,7 +13,9 @@ class myhomepage extends StatelessWidget {
   final passwordcontroller = TextEditingController();
 
   //sign user in method
-  void signUserIn() {}
+  void signUserIn() {
+
+  }
 
   @override
   Widget build(BuildContext context) {
